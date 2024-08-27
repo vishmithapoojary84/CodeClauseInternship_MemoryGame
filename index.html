@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/memory.PNG" type="image/x-icon">
+    <title>Memory Game</title>
+  <style>
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Centering container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(0deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(157.5deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(112.5deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(90deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(90deg, rgb(173, 92, 95),rgb(110, 20, 174)); background-blend-mode:overlay,overlay,overlay,overlay,normal;
+    text-align: center;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Info Text Style */
+.info {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Countdown Time Style */
+#countdown-time {
+    font-weight: bold;
+    color: #ffecb3;
+}
+
+/* Button Style */
+button {
+    padding: 0.75em 2em;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(71, 131, 223);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(19, 100, 222);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+img{
+  width: 400px;
+  height: 300px;
+  animation: fadeIn 2s ease-in-out;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Memory Game </h1>
+    <h1>Are You Ready to Play!</h1>
+    <img src="images/memory.PNG" alt="">
+    <p class="info">Can You Finish The Game In 2 Minutes?</p>
+    <button id="start-button">Start Game</button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('start-button');
+
+    startButton.addEventListener('click', () => {
+        // Redirect to the game page (assuming the game page is named "game.html")
+        window.location.href = 'game.html';
+    });
+});
+
+</script>
+</body>
+</html>

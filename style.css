@@ -1,0 +1,152 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+:root{
+  --bg-main:#464646;
+  --bg-card:#2d2727;
+  --border-color:#efc745;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  background-color: var(--bg-main);
+}
+h1{
+  color: #efeae3;
+  font-family: "Lexend Deca Light";
+  font-size: 4rem;
+}
+span{
+  color: var(--border-color);
+}
+#card-section{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 2rem;
+}
+/* .card{
+  background-color: var(--bg-card);
+  padding: 2rem;
+  border-radius: .6rem;
+  width: 6rem;
+  height: 6rem;
+  background-size: contain;
+  box-shadow: rgba(149,157,165,0.2)0px 8px 24px;
+  background-repeat: no-repeat;
+background-position: center;
+}
+.card-selected{
+  border: .2rem solid var(--border-color);
+}
+.card_match{
+  border: .2rem solid purple;
+} */
+#reset-button {
+  background-color: var(--border-color);
+  color:black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem;
+  transition: background-color 0.3s ease;
+
+
+}
+
+#reset-button:hover {
+  background-color: #f5c518; /* Lighter color on hover */
+}
+
+ .card{
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+  
+ }
+ .card,
+ .back-card,
+ .front-card{
+  height: 6rem;
+  width: 6rem;
+ }
+ .back-card,
+ .front-card{
+  position: absolute;
+  backface-visibility: hidden;
+ }
+ .front-card{
+  background:var(--border-color);
+  background-size: contain;
+  border-radius: .6rem;
+  box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+  padding: 2rem;
+ }
+ .back-card{
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+  padding: 2rem;
+ 
+ }
+ .card-selected{
+  transform: rotateY(180deg);
+ }
+.front-card{
+  background:var(--border-color);
+  /* transform: rotateY(180deg); */
+ }
+ .card_match{
+  background:var(--bg-card);
+  
+
+ }
+/* Container for aligning all game info and reset button in one line */
+#game-info {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 1rem; /* Space between items */
+  margin-bottom: 1rem; /* Space below the game-info section */
+}
+
+/* Common styles for moves, score, and timer */
+#game-info div {
+  background-color:#efeae3;
+  color: black;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for moves, score, and timer */
+#game-info div:hover {
+  background-color: #f5c518; /* Lighter color on hover */
+}
+
+/* Reset button styles */
+#reset-button {
+  background-color: #efeae3;
+  color: black;
+  border: 2px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+  background-color: #f5c518; /* Lighter color on hover */
+}

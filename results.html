@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- favicon -->
+       <link rel="shortcut icon" href="images/memory.PNG" type="image/x-icon">
+       <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+          background-image: linear-gradient(0deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(157.5deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(112.5deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(90deg, rgb(213, 229, 183) 0%, rgb(213, 229, 183) 17%,rgb(189, 213, 190) 17%, rgb(189, 213, 190) 29%,rgb(166, 196, 196) 29%, rgb(166, 196, 196) 38%,rgb(142, 180, 203) 38%, rgb(142, 180, 203) 47%,rgb(118, 164, 210) 47%, rgb(118, 164, 210) 58%,rgb(95, 147, 216) 58%, rgb(95, 147, 216) 88%,rgb(71, 131, 223) 88%, rgb(71, 131, 223) 100%),linear-gradient(90deg, rgb(173, 92, 95),rgb(110, 20, 174)); background-blend-mode:overlay,overlay,overlay,overlay,normal;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .results {
+background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .results h1 {
+            margin: 0;
+            font-size: 2rem;
+            animation: fadeIn 3s ease-in-out;
+            color:#efc745 ;
+        }
+        .results p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+        /* .results button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #efc745;
+            color: #333;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .results button:hover {
+            background-color: #ffd54f;
+        } */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #fff;
+        }
+        .yes {
+            background-color: #4caf50; /* Green color */
+            animation: fadeIn 3s ease-in-out;
+        }
+        .yes:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .no {
+            background-color: #f44336; /* Red color */
+            animation: fadeIn 3s ease-in-out;
+        }
+        .no:hover {
+            background-color: #e53935; /* Darker red on hover */
+        }
+        /* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+       
+    </style>
+</head>
+<body>
+    <div class="results">
+        <h1>Game Over!</h1>
+        <p id="message"></p>
+        <!-- <button onclick="goBack()">Play Again</button> -->
+        <div class="button-container">
+            <button class="yes" onclick="playAgain()">Yes</button>
+            <button class="no" onclick="goHome()">No</button>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const moves = urlParams.get('moves');
+        const score = urlParams.get('score');
+        const time = urlParams.get('time');
+
+        document.getElementById('message').innerText = `Congratulations!🤩 You completed the game with ${moves} moves, a score of ${score}, and took ${time} seconds.
+ Do you want to play again?`;
+
+        function goBack() {
+            window.location.href = 'game.html'; // Redirect to the main game page
+        }
+        function playAgain() {
+            window.location.href = 'game.html'; // Redirect to main game page
+        }
+
+        function goHome() {
+            window.location.href = 'index.html'; // Redirect to start page
+        }
+    </script>
+</body>
+</html>
